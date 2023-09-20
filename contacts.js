@@ -3,9 +3,7 @@ const path = require('path');
 
 const contactsPath = path.join(__dirname, 'db', 'contacts.json');
 
-// TODO: задокументувати кожну функцію
 async function listContacts() {
-    // ...твій код. Повертає масив контактів.
     try {
         const data = await fs.readFile(contactsPath, 'utf-8');
         const contacts = JSON.parse(data);
@@ -13,7 +11,7 @@ async function listContacts() {
     } catch (error) {
         throw error;
     }
-}
+}//отримує список всіх контактів
   
 async function getContactById(contactId) {
     try {
@@ -23,7 +21,7 @@ async function getContactById(contactId) {
     } catch (error) {
       throw error;
     }
-}
+}//Повертає об'єкт контакту з таким id
 
 async function removeContact(contactId) {
     try {
@@ -40,7 +38,7 @@ async function removeContact(contactId) {
     } catch (error) {
       throw error;
     }
-}
+}//Повертає об'єкт видаленого контакту
   
 async function addContact(name, email, phone) {
     try {
@@ -57,7 +55,7 @@ async function addContact(name, email, phone) {
     } catch (error) {
       throw error;
     }
-}
+}//Повертає об'єкт доданого контакту
 
 module.exports = {
     listContacts,
